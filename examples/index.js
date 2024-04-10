@@ -2,6 +2,10 @@ const path = require('path');
 const fs = require('fs-extra');
 const colors = require('colors');
 const inquirer = require('inquirer');
+const FFmpegUtil = require('../lib/utils/ffmpeg');
+
+FFmpegUtil.setFFmpegPath('/Volumes/data/data/program/nodejs/woqivc/addon/ffmpeg');
+FFmpegUtil.setFFprobePath('/Volumes/data/data/program/nodejs/woqivc/addon/ffprobe');
 
 const printRestartInfo = () =>
   console.log(colors.green(`\n --- You can press the s key or the w key to restart! --- \n`));

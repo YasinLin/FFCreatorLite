@@ -12,7 +12,7 @@ const outputDir = path.join(__dirname, './output/');
 const cacheDir = path.join(__dirname, './cache/');
 
 const transitionDemoTask = () => {
-  const trans = shuffle(['pixelize', 'circleclose', 'slideup', 'hrslice', 'wipetl']);
+  const trans = shuffle(['vertclose', 'vertopen', 'diagtl', 'slidedown', 'wipetl']);
   const order = ['一', '二', '三', '四', '五'];
 
   // create creator instance
@@ -74,7 +74,7 @@ const creatScene = ({ index, transition, text }) => {
   ftext.setColor('#30336b');
   ftext.setBackgroundColor('#ffffff');
   ftext.addEffect('moveInUpBack', 1, 1.3);
-  scene.addChild(ftext);
+  // scene.addChild(ftext);
 
   // add logo2
   const scale = 1;

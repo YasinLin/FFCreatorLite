@@ -77,7 +77,6 @@ const createImageAnimation = () => {
   creator.addChild(scene2);
 
   creator.start();
-  creator.openLog();
 
   creator.on('start', () => {
     console.log(`FFCreatorLite start`);

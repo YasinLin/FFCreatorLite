@@ -48,3 +48,8 @@ examples/output
 coverage/**
 dwt*
 /coverage/
+
+
+cache
+output
+test.json
