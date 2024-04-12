@@ -1,5 +1,5 @@
 {
-  "name": "ffcreatorlite",
+  "name": "@woqi/ffcreatorlite",
   "version": "2.5.1",
   "description": "FFCreatorLite is a lightweight and flexible short video production library",
   "main": "lib/index.js",
@@ -44,7 +44,6 @@
     "keypress": "^0.2.1"
   },
   "files": [
-    "dist",
     "lib"
   ]
 }
