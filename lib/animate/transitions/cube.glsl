@@ -2,8 +2,17 @@
 // License: MIT
 uniform float persp; // = 0.7
 uniform float unzoom; // = 0.3
+#ifndef unzoom
+  #define unzoom  0.3
+#endif
 uniform float reflection; // = 0.4
+#ifndef reflection
+  #define reflection  0.4
+#endif
 uniform float floating; // = 3.0
+#ifndef floating
+  #define floating  3.0
+#endif
 
 vec2 project (vec2 p) {
   return p * vec2(1.0, -1.2) + vec2(0.0, -floating/100.);

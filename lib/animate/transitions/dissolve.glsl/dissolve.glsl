@@ -6,10 +6,25 @@ precision mediump float;
 #endif
 
 uniform float uLineWidth;// = 0.1
+#ifndef uLineWidth
+  #define uLineWidth  0.1
+#endif
 uniform vec3 uSpreadClr;// = vec3(1.0, 0.0, 0.0);
+#ifndef uSpreadClr
+  #define uSpreadClr  vec3(1.0, 0.0, 0.0)
+#endif
 uniform vec3 uHotClr;// = vec3(0.9, 0.9, 0.2);
+#ifndef uHotClr
+  #define uHotClr  vec3(0.9, 0.9, 0.2)
+#endif
 uniform float uPow;// = 5.0;
+#ifndef uPow
+  #define uPow  5.0
+#endif
 uniform float uIntensity;// = 1.0;
+#ifndef uIntensity
+  #define uIntensity  1.0
+#endif
 
 vec2 hash(vec2 p)  // replace this by something better
 {

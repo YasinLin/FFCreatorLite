@@ -1,11 +1,17 @@
 // Author: gre
 // License: MIT
 
-// Usage: fromStep and toStep must be in [0.0, 1.0] range 
+// Usage: fromStep and toStep must be in [0.0, 1.0] range
 // and all(fromStep) must be < all(toStep)
 
 uniform vec4 fromStep; // = vec4(0.0, 0.2, 0.4, 0.0)
+#ifndef fromStep
+  #define fromStep  vec4(0.0, 0.2, 0.4, 0.0)
+#endif
 uniform vec4 toStep; // = vec4(0.6, 0.8, 1.0, 1.0)
+#ifndef toStep
+  #define toStep  vec4(0.6, 0.8, 1.0, 1.0)
+#endif
 
 vec4 transition (vec2 uv) {
   vec4 a = getFromColor(uv);

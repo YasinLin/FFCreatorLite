@@ -2,6 +2,9 @@
 // License: MIT
 
 uniform vec2 direction; // = vec2(0.0, 1.0)
+#ifndef direction
+  #define direction  vec2(0.0, 1.0)
+#endif
 
 vec4 transition (vec2 uv) {
   float easing = sqrt((2.0 - progress) * progress);

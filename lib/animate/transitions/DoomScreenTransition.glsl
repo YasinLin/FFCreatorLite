@@ -6,18 +6,33 @@
 
 // Number of total bars/columns
 uniform int bars; // = 30
+#ifndef bars
+  #define bars  30
+#endif
 
 // Multiplier for speed ratio. 0 = no variation when going down, higher = some elements go much faster
 uniform float amplitude; // = 2
+#ifndef amplitude
+  #define amplitude  2.
+#endif
 
 // Further variations in speed. 0 = no noise, 1 = super noisy (ignore frequency)
 uniform float noise; // = 0.1
+#ifndef noise
+  #define noise  0.1
+#endif
 
 // Speed variation horizontally. the bigger the value, the shorter the waves
 uniform float frequency; // = 0.5
+#ifndef frequency
+  #define frequency  0.5
+#endif
 
 // How much the bars seem to "run" from the middle of the screen first (sticking to the sides). 0 = no drip, 1 = curved drip
 uniform float dripScale; // = 0.5
+#ifndef dripScale
+  #define dripScale  0.5
+#endif
 
 
 // The code proper --------

@@ -6,7 +6,7 @@
 // Which is based on https://github.com/evanw/glfx.js/blob/master/src/filters/blur/zoomblur.js
 // With additional easing functions from https://github.com/rectalogic/rendermix-basic-effects/blob/master/assets/com/rendermix/Easing/Easing.glsllib
 
-uniform float strength; // = 0.4
+const float strength = 0.4;
 
 const float PI = 3.141592653589793;
 

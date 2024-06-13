@@ -3,6 +3,9 @@
 
 // Custom parameters
 uniform float size; // = 0.2
+#ifndef size
+  #define size  0.2
+#endif
 
 float rand (vec2 co) {
   return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);

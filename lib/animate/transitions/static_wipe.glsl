@@ -10,13 +10,19 @@ float rnd (vec2 st) {
 }
 
 uniform bool u_transitionUpToDown; // = true;
+#ifndef u_transitionUpToDown
+  #define u_transitionUpToDown  true
+#endif
 uniform float u_max_static_span;// = 0.5;
+#ifndef u_max_static_span
+  #define u_max_static_span  0.5
+#endif
 
 vec4 transition (vec2 uv) {
-  
+
 
   float span = u_max_static_span*pow(sin(PI*progress),0.5);
-  
+
   float transitionEdge = u_transitionUpToDown ? 1.0-uv.y : uv.y;
   float mixRatio = 1.0 - step(progress, transitionEdge);
 
@@ -25,10 +31,10 @@ vec4 transition (vec2 uv) {
     getToColor(uv),
     mixRatio
   );
-  
+
   float noiseEnvelope = smoothstep(progress-span, progress, transitionEdge) * (1.0 - smoothstep(progress, progress + span, transitionEdge));
   vec4 noise = vec4(vec3(rnd(uv*(1.0+progress))), 1.0);
-  
+
 
   return mix(transitionMix, noise, noiseEnvelope);
 }

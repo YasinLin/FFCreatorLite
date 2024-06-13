@@ -7,6 +7,9 @@
 uniform sampler2D displacementMap;
 
 uniform float strength; // = 0.5
+#ifndef strength
+  #define strength  0.5
+#endif
 
 vec4 transition (vec2 uv) {
   float displacement = texture2D(displacementMap, uv).r * strength;

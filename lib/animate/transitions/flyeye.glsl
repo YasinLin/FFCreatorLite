@@ -1,8 +1,17 @@
 // Author: gre
 // License: MIT
 uniform float size; // = 0.04
+#ifndef size
+  #define size  0.04
+#endif
 uniform float zoom; // = 50.0
+#ifndef zoom
+  #define zoom  50.0
+#endif
 uniform float colorSeparation; // = 0.3
+#ifndef colorSeparation
+  #define colorSeparation  0.3
+#endif
 
 vec4 transition(vec2 p) {
   float inv = 1. - progress;

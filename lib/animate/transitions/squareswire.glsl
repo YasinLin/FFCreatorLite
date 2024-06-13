@@ -1,9 +1,18 @@
 // Author: gre
 // License: MIT
- 
+
 uniform ivec2 squares;// = ivec2(10,10)
+#ifndef squares
+  #define squares  ivec2(10,10)
+#endif
 uniform vec2 direction;// = vec2(1.0, -0.5)
+#ifndef direction
+  #define direction  vec2(1.0, -0.5)
+#endif
 uniform float smoothness; // = 1.6
+#ifndef smoothness
+  #define smoothness  1.6
+#endif
 
 const vec2 center = vec2(0.5, 0.5);
 vec4 transition (vec2 p) {

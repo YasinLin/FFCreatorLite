@@ -2,10 +2,16 @@
 // License: MIT
 
 uniform vec2 direction; // = vec2(1.0, -1.0)
+#ifndef direction
+  #define direction  vec2(1.0, -1.0)
+#endif
 uniform float smoothness; // = 0.5
- 
+#ifndef smoothness
+  #define smoothness  0.5
+#endif
+
 const vec2 center = vec2(0.5, 0.5);
- 
+
 vec4 transition (vec2 uv) {
   vec2 v = normalize(direction);
   v /= abs(v.x)+abs(v.y);

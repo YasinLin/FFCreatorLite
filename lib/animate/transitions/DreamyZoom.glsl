@@ -9,9 +9,15 @@
 
 // In degrees
 uniform float rotation; // = 6
+#ifndef rotation
+  #define rotation  6.
+#endif
 
 // Multiplier
 uniform float scale; // = 1.2
+#ifndef scale
+  #define scale  1.2
+#endif
 
 
 // The code proper --------
@@ -21,7 +27,7 @@ vec4 transition(vec2 uv) {
   float phase = progress < 0.5 ? progress * 2.0 : (progress - 0.5) * 2.0;
   float angleOffset = progress < 0.5 ? mix(0.0, rotation * DEG2RAD, phase) : mix(-rotation * DEG2RAD, 0.0, phase);
   float newScale = progress < 0.5 ? mix(1.0, scale, phase) : mix(scale, 1.0, phase);
-  
+
   vec2 center = vec2(0, 0);
 
   // Calculate the source point

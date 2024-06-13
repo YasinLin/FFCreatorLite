@@ -2,8 +2,14 @@
 // License: MIT
 
 uniform ivec2 size; // = ivec2(10, 10)
+#ifndef size
+  #define size  ivec2(10, 10)
+#endif
 uniform float smoothness; // = 0.5
- 
+#ifndef smoothness
+  #define smoothness  0.5
+#endif
+
 float rand (vec2 co) {
   return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
 }

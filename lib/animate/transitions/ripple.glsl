@@ -1,7 +1,13 @@
 // Author: gre
 // License: MIT
 uniform float amplitude; // = 100.0
+#ifndef amplitude
+  #define amplitude  100.0
+#endif
 uniform float speed; // = 50.0
+#ifndef speed
+  #define speed  50.0
+#endif
 
 vec4 transition (vec2 uv) {
   vec2 dir = uv - vec2(.5);

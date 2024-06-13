@@ -3,6 +3,9 @@
 // ported by gre from https://gist.github.com/Xaychru/ce1d48f0ce00bb379750
 
 uniform float smoothness; // = 1.0
+#ifndef smoothness
+  #define smoothness  1.0
+#endif
 
 const float PI = 3.141592653589;
 

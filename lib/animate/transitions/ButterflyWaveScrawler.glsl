@@ -1,8 +1,17 @@
 // Author: mandubian
 // License: MIT
 uniform float amplitude; // = 1.0
+#ifndef amplitude
+  #define amplitude  1.0
+#endif
 uniform float waves; // = 30.0
+#ifndef waves
+  #define waves  30.0
+#endif
 uniform float colorSeparation; // = 0.3
+#ifndef colorSeparation
+  #define colorSeparation  0.3
+#endif
 float PI = 3.14159265358979323846264;
 float compute(vec2 p, float progress, vec2 center) {
 vec2 o = p*sin(progress * amplitude)-center;

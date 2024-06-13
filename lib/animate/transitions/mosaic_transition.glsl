@@ -2,6 +2,9 @@
 // License: MIT
 
 uniform float mosaicNum;// = 10.0
+#ifndef mosaicNum
+  #define mosaicNum  10.0
+#endif
 
 vec2 getMosaicUV(vec2 uv) {
   float mosaicWidth = 2.0 / mosaicNum * min(progress, 1.0 - progress);

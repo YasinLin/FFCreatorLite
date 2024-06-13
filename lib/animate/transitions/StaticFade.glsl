@@ -2,7 +2,13 @@
 // License: MIT
 
 uniform float n_noise_pixels ; // = 200.0
+#ifndef n_noise_pixels
+  #define n_noise_pixels  200.0
+#endif
 uniform float static_luminosity ; // = 0.8
+#ifndef static_luminosity
+  #define static_luminosity  0.8
+#endif
 
 float rnd (vec2 st) {
     return fract(sin(dot(st.xy,
@@ -23,7 +29,7 @@ float staticIntensity(float t)
   float transformedThreshold =1.2*(1.0 - transitionProgress)-0.1;
   return min(1.0, transformedThreshold);
 }
-  
+
 vec4 transition (vec2 uv) {
 
   float baseMix = step(0.5, progress);
@@ -32,9 +38,9 @@ vec4 transition (vec2 uv) {
     getToColor(uv),
     baseMix
   );
-  
+
   vec2 uvStatic = floor(uv * n_noise_pixels)/n_noise_pixels;
-  
+
   vec4 staticColor = staticNoise(uvStatic, progress, static_luminosity);
 
   float staticThresh = staticIntensity(progress);

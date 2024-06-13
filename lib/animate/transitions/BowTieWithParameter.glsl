@@ -2,7 +2,13 @@
 // License: MIT
 
 uniform float adjust; // = 0.5;
+#ifndef adjust
+  #define adjust  0.5
+#endif
 uniform bool reverse; // = false;
+#ifndef reverse
+  #define reverse  false
+#endif
 
 float check(vec2 p1, vec2 p2, vec2 p3)
 {

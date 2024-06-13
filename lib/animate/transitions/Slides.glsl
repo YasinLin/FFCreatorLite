@@ -5,7 +5,13 @@
 // Slides Transition by Mark Craig (Copyright © 2022)
 
 uniform int type; // = 0
+#ifndef type
+  #define type  0
+#endif
 uniform bool In; // = false
+#ifndef In
+  #define In  false
+#endif
 // type: slide to/from which edge, which corner, or center
 // In: if true slide new image in, otherwise slide old image out
 

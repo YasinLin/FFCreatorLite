@@ -1,7 +1,13 @@
 // author: gre
-// License: MIT 
+// License: MIT
 uniform float reflection; // = 0.4
+#ifndef reflection
+  #define reflection  0.4
+#endif
 uniform float perspective; // = 0.4
+#ifndef perspective
+  #define perspective  0.4
+#endif
 uniform float depth; // = 3
 
 const vec4 black = vec4(0.0, 0.0, 0.0, 1.0);

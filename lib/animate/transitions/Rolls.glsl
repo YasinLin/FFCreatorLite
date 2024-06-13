@@ -5,7 +5,13 @@
 // Rolls Transition by Mark Craig (Copyright © 2022)
 
 uniform int type; // = 0
+#ifndef type
+  #define type  0
+#endif
 uniform bool RotDown; // = false
+#ifndef RotDown
+  #define RotDown  false
+#endif
 // type (0-3): Rotate/Roll from which corner
 // RotDown: if true rotate old image down, otherwise rotate old image up
 

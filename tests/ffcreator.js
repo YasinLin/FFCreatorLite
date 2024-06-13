@@ -7,8 +7,8 @@ const outputDir = path.join(__dirname, './output/');
 
 const vs = new FFExector({
   render: 'gl',
-  // ffmpeg: '/Volumes/data/data/program/nodejs/woqivc/addon/ffmpeg',
-  // ffprobe: '/Volumes/data/data/program/nodejs/woqivc/addon/ffprobe',
+  ffmpeg: '/Users/yasin/Library/Application Support/woqi-pc/VideoSDK/ffmpeg',
+  ffprobe: '/Users/yasin/Library/Application Support/woqi-pc/VideoSDK/ffprobe',
   cacheDir,
   outputDir,
 });

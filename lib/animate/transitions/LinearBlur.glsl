@@ -1,6 +1,9 @@
 // author: gre
 // license: MIT
 uniform float intensity; // = 0.1
+#ifndef intensity
+  #define intensity  0.1
+#endif
 const int passes = 6;
 
 vec4 transition(vec2 uv) {

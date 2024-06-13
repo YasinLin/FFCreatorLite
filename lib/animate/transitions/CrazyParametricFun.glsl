@@ -2,9 +2,21 @@
 // License: MIT
 
 uniform float a; // = 4
+#ifndef a
+  #define a  4.
+#endif
 uniform float b; // = 1
+#ifndef b
+  #define b  1.
+#endif
 uniform float amplitude; // = 120
+#ifndef amplitude
+  #define amplitude  120.
+#endif
 uniform float smoothness; // = 0.1
+#ifndef smoothness
+  #define smoothness  0.1
+#endif
 
 vec4 transition(vec2 uv) {
   vec2 p = uv.xy / vec2(1.0).xy;

@@ -6,15 +6,24 @@
 //optimizations :
 //luminance (see http://stackoverflow.com/questions/596216/formula-to-determine-brightness-of-rgb-color#answer-596241)
 // Y = (R+R+B+G+G+G)/6
-//or Y = (R+R+R+B+G+G+G+G)>>3 
+//or Y = (R+R+R+B+G+G+G+G)>>3
 
 
 //direction of movement :  0 : up, 1, down
-uniform bool direction; // = 1 
+uniform bool direction; // = 1
+#ifndef direction
+  #define direction  1
+#endif
 //luminance threshold
-uniform float l_threshold; // = 0.8 
+uniform float l_threshold; // = 0.8
+#ifndef l_threshold
+  #define l_threshold  0.8
+#endif
 //does the movement takes effect above or below luminance threshold ?
-uniform bool above; // = false 
+uniform bool above; // = false
+#ifndef above
+  #define above  false
+#endif
 
 
 //Random function borrowed from everywhere
@@ -28,11 +37,11 @@ float rand(vec2 co){
 //      Author : Ian McEwan, Ashima Arts.
 //  Maintainer : ijm
 //     Lastmod : 20110822 (ijm)
-//     License : MIT  
+//     License : MIT
 //               2011 Ashima Arts. All rights reserved.
 //               Distributed under the MIT License. See LICENSE file.
 //               https://github.com/ashima/webgl-noise
-// 
+//
 
 vec3 mod289(vec3 x) {
   return x - floor(x * (1.0 / 289.0)) * 289.0;
@@ -119,8 +128,8 @@ vec4 transition(vec2 uv) {
      m = dist <= r && luminance(getFromColor(p))>l_threshold ? 1.0 : (progress*progress*progress);
     }
     else{
-     m = dist <= r && luminance(getFromColor(p))<l_threshold ? 1.0 : (progress*progress*progress);  
+     m = dist <= r && luminance(getFromColor(p))<l_threshold ? 1.0 : (progress*progress*progress);
     }
-    return mix(getFromColor(p), getToColor(p), m);    
+    return mix(getFromColor(p), getToColor(p), m);
   }
 }

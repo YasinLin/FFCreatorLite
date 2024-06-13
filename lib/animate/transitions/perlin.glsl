@@ -6,9 +6,18 @@ precision highp float;
 #endif
 
 uniform float scale; // = 4.0
+#ifndef scale
+  #define scale  4.0
+#endif
 uniform float smoothness; // = 0.01
+#ifndef smoothness
+  #define smoothness  0.01
+#endif
 
 uniform float seed; // = 12.9898
+#ifndef seed
+  #define seed  12.9898
+#endif
 
 // http://byteblacksmith.com/improvements-to-the-canonical-one-liner-glsl-rand-for-opengl-es-2-0/
 float random(vec2 co)

@@ -5,9 +5,18 @@
 const float rad = 120.; // change this value to get different mirror effects
 const float deg = rad / 180. * PI;
 uniform float scale; // = 2.0;
+#ifndef scale
+  #define scale  2.0
+#endif
 uniform float z; // = 1.5;
+#ifndef z
+  #define z  1.5
+#endif
 float dist = scale / 10.;
 uniform float speed; // = 5.;
+#ifndef speed
+  #define speed  5.
+#endif
 vec2 refl(vec2 p,vec2 o,vec2 n)
 {
 	return 2.0*o+2.0*n*dot(p-o,n)-p;
@@ -46,7 +55,7 @@ vec4 mainImage(vec2 uv)
   vec2 uvMix = mix(uv,uv0,cos(progress*PI*2.)/2.+0.5);
   vec4 color = mix(getFromColor(uvMix),getToColor(uvMix),cos((progress-1.)*PI)/2.+0.5);
 	return color;
-    
+
 }
 vec4 transition (vec2 uv) {
   vec4 color = mainImage(uv);

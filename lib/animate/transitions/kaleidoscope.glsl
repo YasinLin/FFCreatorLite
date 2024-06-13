@@ -2,8 +2,17 @@
 // License: MIT
 
 uniform float speed; // = 1.0;
+#ifndef speed
+  #define speed  1.0
+#endif
 uniform float angle; // = 1.0;
+#ifndef angle
+  #define angle  1.0
+#endif
 uniform float power; // = 1.5;
+#ifndef power
+  #define power  1.5
+#endif
 
 vec4 transition(vec2 uv) {
   vec2 p = uv.xy / vec2(1.0).xy;

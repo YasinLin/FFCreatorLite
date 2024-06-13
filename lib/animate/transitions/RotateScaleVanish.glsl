@@ -5,8 +5,17 @@
 // RotateScaleVanish Transition by Mark Craig (Copyright © 2022)
 
 uniform bool FadeInSecond; // = true
+#ifndef FadeInSecond
+  #define FadeInSecond  true
+#endif
 uniform bool ReverseEffect; // = false
+#ifndef ReverseEffect
+  #define ReverseEffect  false
+#endif
 uniform bool ReverseRotation; // = false
+#ifndef ReverseRotation
+  #define ReverseRotation  false
+#endif
 
 #define M_PI 3.14159265358979323846
 #define _TWOPI 6.283185307179586476925286766559

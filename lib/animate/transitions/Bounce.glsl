@@ -2,8 +2,17 @@
 // License: MIT
 
 uniform vec4 shadow_colour; // = vec4(0.,0.,0.,.6)
+#ifndef shadow_colour
+  #define shadow_colour  vec4(0.,0.,0.,.6)
+#endif
 uniform float shadow_height; // = 0.075
+#ifndef shadow_height
+  #define shadow_height  0.075
+#endif
 uniform float bounces; // = 3.0
+#ifndef bounces
+  #define bounces  3.0
+#endif
 
 const float PI = 3.14159265358;
 

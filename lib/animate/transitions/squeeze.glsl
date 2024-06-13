@@ -1,8 +1,11 @@
 // Author: gre
 // License: MIT
- 
+
 uniform float colorSeparation; // = 0.04
- 
+#ifndef colorSeparation
+  #define colorSeparation  0.04
+#endif
+
 vec4 transition (vec2 uv) {
   float y = 0.5 + (uv.y-0.5) / (1.0-progress);
   if (y < 0.0 || y > 1.0) {

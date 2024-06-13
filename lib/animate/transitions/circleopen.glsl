@@ -1,7 +1,13 @@
 // author: gre
 // License: MIT
 uniform float smoothness; // = 0.3
+#ifndef smoothness
+  #define smoothness  0.3
+#endif
 uniform bool opening; // = true
+#ifndef opening
+  #define opening  true
+#endif
 
 const vec2 center = vec2(0.5, 0.5);
 const float SQRT_2 = 1.414213562373;

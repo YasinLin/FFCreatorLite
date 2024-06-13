@@ -4,8 +4,14 @@
 
 // minimum number of squares (when the effect is at its higher level)
 uniform ivec2 squaresMin; // = ivec2(20)
+#ifndef squaresMin
+  #define squaresMin  ivec2(20)
+#endif
 // zero disable the stepping
 uniform int steps; // = 50
+#ifndef steps
+  #define steps  50
+#endif
 
 float d = min(progress, 1.0 - progress);
 float dist = steps>0 ? ceil(d * float(steps)) / float(steps) : d;

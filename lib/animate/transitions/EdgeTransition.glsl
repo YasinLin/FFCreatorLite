@@ -2,9 +2,15 @@
 // License: MIT
 
 uniform float edge_thickness; // = 0.001;
+#ifndef edge_thickness
+  #define edge_thickness  0.001
+#endif
 uniform float edge_brightness; // = 8.0;
+#ifndef edge_brightness
+  #define edge_brightness  8.0
+#endif
 
-vec4 detectEdgeColor(vec3[9] c) {
+vec4 detectEdgeColor(vec3 c[9]) {
   /* adjacent texel array for texel c[4]
     036
     147

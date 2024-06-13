@@ -3,8 +3,17 @@
 // adapted by gre from https://gist.github.com/pthrasher/8e6226b215548ba12734
 
 uniform float smoothness; // = 0.03
+#ifndef smoothness
+  #define smoothness  0.03
+#endif
 uniform vec2 center; // = vec2(0.5)
+#ifndef center
+  #define center  vec2(0.5)
+#endif
 uniform vec3 color; // = vec3(0.0)
+#ifndef color
+  #define color  vec3(0.0)
+#endif
 
 const float M_PI = 3.14159265358979323846;
 

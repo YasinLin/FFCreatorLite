@@ -3,11 +3,26 @@
 // ported by gre from https://gist.github.com/TimDonselaar/9bcd1c4b5934ba60087bdb55c2ea92e5
 
 uniform ivec2 size; // = ivec2(4)
+#ifndef size
+  #define size  ivec2(4)
+#endif
 uniform float pause; // = 0.1
+#ifndef pause
+  #define pause  0.1
+#endif
 uniform float dividerWidth; // = 0.05
+#ifndef dividerWidth
+  #define dividerWidth  0.05
+#endif
 uniform vec4 bgcolor; // = vec4(0.0, 0.0, 0.0, 1.0)
+#ifndef bgcolor
+  #define bgcolor  vec4(0.0, 0.0, 0.0, 1.0)
+#endif
 uniform float randomness; // = 0.1
- 
+#ifndef randomness
+  #define randomness  0.1
+#endif
+
 float rand (vec2 co) {
   return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
 }
@@ -45,18 +60,18 @@ vec4 transition(vec2 p) {
       float currentProg = (progress - pause) / (1.0 - pause * 2.0);
       vec2 q = p;
       vec2 rectanglePos = floor(vec2(size) * q);
-      
+
       float r = rand(rectanglePos) - randomness;
       float cp = smoothstep(0.0, 1.0 - r, currentProg);
-    
+
       float rectangleSize = 1.0 / vec2(size).x;
       float delta = rectanglePos.x * rectangleSize;
       float offset = rectangleSize / 2.0 + delta;
-      
+
       p.x = (p.x - offset)/abs(cp - 0.5)*0.5 + offset;
       vec4 a = getFromColor(p);
       vec4 b = getToColor(p);
-      
+
       float s = step(abs(vec2(size).x * (q.x - delta) - 0.5), abs(cp - 0.5));
       return mix(bgcolor, mix(b, a, step(cp, 0.5)), s);
     }

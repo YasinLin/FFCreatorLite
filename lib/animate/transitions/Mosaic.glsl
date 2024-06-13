@@ -6,7 +6,13 @@
 #define POW2(X) X*X
 #define POW3(X) X*X*X
 uniform int endx; // = 2
+#ifndef endx
+  #define endx  2
+#endif
 uniform int endy; // = -1
+#ifndef endy
+  #define endy  -1
+#endif
 
 float Rand(vec2 v) {
   return fract(sin(dot(v.xy ,vec2(12.9898,78.233))) * 43758.5453);

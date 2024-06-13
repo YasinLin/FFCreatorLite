@@ -2,7 +2,13 @@
 // License: MIT
 
 uniform float smoothness; // = 0.1
+#ifndef smoothness
+  #define smoothness  0.1
+#endif
 uniform vec2 direction; // = vec2(-1.0, 1.0)
+#ifndef direction
+  #define direction  vec2(-1.0, 1.0)
+#endif
 
 const vec2 center = vec2(0.5, 0.5);
 

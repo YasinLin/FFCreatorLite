@@ -1,6 +1,9 @@
 // author: Anastasia Dunbar
 // license: MIT
 uniform float Seed; // = 2.31
+#ifndef Seed
+  #define Seed  2.31
+#endif
 float sigmoid(float x, float a) {
     float b = pow(x*2.,a)/2.;
     if (x > .5) {
@@ -40,20 +43,20 @@ vec4 transition(vec2 p) {
   f /= 11.;
   f = pow3(f*vec3(1.,0.7,0.6),vec3(1.,2.-sin(progress*pi),1.3));
   f *= sin(progress*pi);
-  
+
   p -= .5;
   p *= 1.+(smooth_random(vec2(progress*5.),6.3)*sin(progress*pi)*.05);
   p += .5;
-  
+
   vec4 blurred_image = vec4(0.);
   float bluramount = sin(progress*pi)*.03;
   #define repeats  50.
-  for (float i = 0.; i < repeats; i++) { 
-      vec2 q = vec2(cos(degrees((i/repeats)*360.)),sin(degrees((i/repeats)*360.))) *  (rand(vec2(i,p.x+p.y))+bluramount); 
+  for (float i = 0.; i < repeats; i++) {
+      vec2 q = vec2(cos(degrees((i/repeats)*360.)),sin(degrees((i/repeats)*360.))) *  (rand(vec2(i,p.x+p.y))+bluramount);
       vec2 uv2 = p+(q*bluramount);
       blurred_image += texture(uv2);
   }
   blurred_image /= repeats;
-  
+
   return blurred_image+vec4(f,0.);
 }

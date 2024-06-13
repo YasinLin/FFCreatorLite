@@ -1,8 +1,14 @@
 // Tunable parameters
 // How much to zoom (out) for the effect ~ 0.5 - 1.0
 uniform float zoom; // = 0.88
+#ifndef zoom
+  #define zoom  0.88
+#endif
 // Corner radius as a fraction of the image height
 uniform float corner_radius;  // = 0.22
+#ifndef corner_radius
+  #define corner_radius  0.22
+#endif
 
 // author: Ted Schundler
 // license: BSD 2 Clause
